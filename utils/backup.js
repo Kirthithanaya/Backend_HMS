@@ -1,7 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-
-const backupData = () => {
+import fs from 'fs';
+import path from "path"
+export const backupData = () => {
   const timestamp = new Date().toISOString().replace(/:/g, '-');
   const backupPath = path.join(__dirname, `../backups/backup-${timestamp}.json`);
 
@@ -16,4 +15,3 @@ const backupData = () => {
   return backupPath;
 };
 
-module.exports = backupData;

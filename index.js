@@ -14,6 +14,7 @@ import helmet from "./middleware/secureHeaders.js";
 import sendEmail from "./routes/emailRoutes.js";
 import payment from "./routes/paymentRoutes.js";
 import Notification from "./routes/notificationRoutes.js";
+import integration from "./routes/integrationRoutes.js"; 
 
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.use("/api/Users", Users);
 app.use("/api/sms", sms);
 app.use("/api/email", sendEmail);
 app.use("/api/notification", Notification);
+app.use("/api/integration", integration);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {

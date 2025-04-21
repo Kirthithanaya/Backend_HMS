@@ -15,6 +15,16 @@ const expenseSchema = new mongoose.Schema({
   amountPaid: { type: Number, required: true },
   date: { type: Date, default: Date.now },
   description: String,
+  method: {
+    type: String,
+    enum: ["cash", "bank transfer", "online", "other"],
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["Success", "Failed"],
+    default: "Success",
+  },
 });
 
 const Expense = mongoose.model("Expense", expenseSchema);
